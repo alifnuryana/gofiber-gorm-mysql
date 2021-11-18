@@ -19,7 +19,7 @@ func main() {
 	router.SetupRoutes(app)
 
 	// Listen on port 3000
-	err := app.Listen(":3000")
+	err := app.ListenTLS(":3000", "/etc/letsencrypt/live/www.alifnuryana.software/fullchain.pem", "/etc/letsencrypt/live/www.alifnuryana.software/privkey.pem")
 	if err != nil {
 		return
 	}
